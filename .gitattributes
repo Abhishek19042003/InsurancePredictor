@@ -1,0 +1,12 @@
+# Auto convert text files to LF on commit and CRLF on checkout (Windows-friendly)
+* text=auto
+
+# Jupyter notebooks
+*.ipynb text
+
+# Keep .xml files consistent
+*.xml text
+
+# Exclude binary files or files you want untouched
+*.png binary
+*.jpg binary

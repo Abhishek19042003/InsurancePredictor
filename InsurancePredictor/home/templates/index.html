@@ -1,0 +1,182 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Insurance Premium Predictor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f4f7fc;
+      color: #333;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    header {
+      background-color: #4B8BBE;
+      padding: 1rem;
+      color: white;
+    }
+    footer {
+      background-color: #4B8BBE;
+      color: white;
+      padding: 2rem 0;
+    }
+    .btn-primary {
+      background-color: #ff8c00;
+      border-color: #ff8c00;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-primary:hover {
+      background-color: #ff4500;
+      border-color: #ff4500;
+    }
+    .form-control, .form-select {
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      box-shadow: none;
+      border: 1px solid #ccc;
+    }
+    .form-label {
+      font-weight: 500;
+      color: #4B8BBE;
+    }
+    .title-text {
+      color: white;
+      font-weight: bold;
+    }
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #ff8c00 !important;
+    }
+    .nav-item {
+      margin-right: 20px;
+    }
+    .btn-warning, .btn-outline-secondary {
+      transition: all 0.3s ease;
+    }
+    .btn-warning:hover, .btn-outline-secondary:hover {
+      background-color: #ff8c00;
+      color: white;
+    }
+    .registration-box, .feature-box {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      padding: 2rem;
+      margin: 1rem;
+      text-align: center;
+    }
+    .feature-box img {
+      max-width: 50px;
+    }
+    .carousel-item p {
+      font-style: italic;
+    }
+    .carousel-item small {
+      font-size: 0.875rem;
+      color: #4B8BBE;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="container d-flex justify-content-between">
+      <!-- Left side: Logo/Title -->
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 link-body-emphasis text-decoration-none title-text">
+        <span class="fs-3">Insurance Premium Predictor</span>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="/prediction" class="nav-link">Prediction</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Right side: Search bar, Log In and Sign Up -->
+      <div class="d-flex align-items-center">
+        <!-- Search bar -->
+        <form class="d-flex me-3" role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light ms-2" type="submit">Search</button>
+        </form>
+
+        <!-- Log In and Sign Up buttons -->
+        <div class="text-end">
+          <a href="/login" class="btn btn-outline-light me-2">Log In</a>
+          <a href="/registration" class="btn btn-warning">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container text-center my-5">
+    <h1 class="display-4 mb-3">Welcome to Insurance Premium Predictor</h1>
+    <p class="lead mb-4">Easily predict your insurance premium using our powerful machine learning tool. Get accurate estimates in just a few clicks!</p>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-center mb-4">
+      <a href="/prediction" class="btn btn-warning btn-lg me-md-2">Start Predicting</a>
+      <a href="/about" class="btn btn-outline-secondary btn-lg">Learn More About Us</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row justify-content-center">
+      <div class="col-md-4 feature-box">
+        <img src="{% static 'images/accurate.png' %}" alt="Accurate">
+        <h5>Accurate</h5>
+        <p>Our model uses advanced machine learning algorithms to provide highly accurate premium estimates based on your personal data.</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <img src="{% static 'images/easy.png' %}" alt="Easy to Use">
+        <h5>Easy to Use</h5>
+        <p>Our tool is designed with simplicity in mind. Just enter your details, and you'll get your premium estimate instantly.</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <img src="{% static 'images/Free.png' %}" alt="Free to Use">
+        <h5>Free to Use</h5>
+        <p>We believe in making insurance predictions accessible to everyone. Our tool is completely free to use, with no hidden costs.</p>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonial-section" class="carousel slide my-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <p>"This tool made it so easy to estimate my insurance premium. I highly recommend it!"</p>
+          <small>John Doe</small>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-section" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonial-section" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h3 class="mb-4">Ready to Get Started?</h3>
+    <a href="/prediction" class="btn btn-primary btn-lg">Start Predicting Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>© 2024 Abhishek. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
